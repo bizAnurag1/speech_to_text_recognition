@@ -37,3 +37,36 @@ Uses the AudioFileHandler class to process new files.
 4. Logging and Error Handling
 All operations are logged using the logging module for real-time monitoring.
 Errors are recorded using a logging mechanism and an external log_entry function.
+
+## How to Use
+### Set Up the Environment:
+Install the required Python packages:
+pip install watchdog pydub pytz
+
+Ensure your transcription function (transcribe_audio) and MP3-to-WAV conversion function (convert_mp3_to_wav) are implemented in the functions module.
+
+### Run the Script:
+Start the script to monitor the input folder:
+python script_name.py
+
+### Add Files:
+Place MP3 files in the data/input_audio directory.
+Transcriptions will be saved as JSON files in the data/transcriptions directory.
+
+## Dependencies
+watchdog: For folder monitoring.
+pydub: For audio format conversion (requires ffmpeg or libav installed).
+pytz: For timezone handling during logging.
+Customization
+Update the input and output directory paths in the if __name__ == "__main__" section.
+Modify the transcription function (transcribe_audio) or conversion logic as needed.
+
+## Error Handling
+If errors occur during processing:
+Check the logs for detailed error messages.
+Ensure dependencies like ffmpeg are correctly installed.
+
+## Future Improvements
+Add support for monitoring subdirectories.
+Implement multi-threading or queuing for processing large volumes of files.
+Extend to handle other audio formats.
